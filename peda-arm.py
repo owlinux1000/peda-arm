@@ -5,7 +5,6 @@
 #
 #       License: see LICENSE file for details
 #
-
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -83,7 +82,7 @@ CPSR_MODES = dict(zip(CPSR_M_INDEX, CPSR_M_TEXT))
 MSG_LEGEND = "Legend: %s, %s, %s, value" % (red("code"), blue("data"), green("rodata"))
 
 if zlib:
-    with open(os.path.dirname(PEDAFILE) + '/lib/system_calls', 'r') as f:
+    with open(os.path.dirname(PEDAFILE) + '/lib/system_calls', 'rb') as f:
         # {number:[function_name,name,params_num,[params...]]}
         SYSTEM_CALLS = pickle.loads(zlib.decompress(f.read()))
     info('Loading system calls.')
